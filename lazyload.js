@@ -182,7 +182,7 @@ LazyLoad = (function (doc) {
       });
 
       if (!urls.length) {
-        return callback.apply(context, obj ? [obj] : undefined);
+        return callback && callback.apply(context || window, obj ? [obj] : []);
       }
 
       // Create a request object for each URL. If multiple URLs are specified,
